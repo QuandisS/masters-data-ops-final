@@ -5,3 +5,4 @@ pg_data
 *.db
 mlflow_data
 mlruns
+logs
