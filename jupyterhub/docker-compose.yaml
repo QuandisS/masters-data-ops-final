@@ -1,0 +1,18 @@
+services:
+  jupyterhub:
+    build: .
+    container_name: jupyterhub
+    ports:
+      - "8000:8000"
+    environment:
+      - JUPYTERHUB_CRYPT_KEY=${JUPYTERHUB_CRYPT_KEY}
+      - CONFIGPROXY_AUTH_TOKEN=${CONFIGPROXY_AUTH_TOKEN}
+      - JUPYTERHUB_COOKIE_SECRET=${JUPYTERHUB_COOKIE_SECRET}
+      - JUPYTERHUB_DB_URL=${JUPYTERHUB_DB_URL}
+    volumes:
+      - ./jupyterhub_config.py:/etc/jupyterhub/jupyterhub_config.py:ro
+      - jupyterhub_data:/srv/jupyterhub
+    restart: unless-stopped
+
+volumes:
+  jupyterhub_data:
