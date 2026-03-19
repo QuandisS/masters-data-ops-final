@@ -1,0 +1,15 @@
+auth:
+  encrypt:
+    secret_key: "lakefs_encrypt_secret_key_32_bytes_here"
+
+database:
+  type: "postgres"
+  postgres:
+    connection_string: "postgres://lakefs:lakefs_password@postgres:5432/lakefs_db?sslmode=disable"
+
+blockstore:
+  type: "s3"
+  s3:
+    endpoint: "http://minio:9000"
+    region: "us-east-1"
+    force_path_style: true
