@@ -6,3 +6,4 @@ pg_data
 mlflow_data
 mlruns
 logs
+artifacts

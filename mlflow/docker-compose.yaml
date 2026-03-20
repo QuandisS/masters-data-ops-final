@@ -23,7 +23,6 @@ services:
     container_name: mlflow-server
     environment:
       MLFLOW_BACKEND_STORE_URI: ${MLFLOW_BACKEND_STORE_URI}
-      MLFLOW_DEFAULT_ARTIFACT_ROOT: ${MLFLOW_DEFAULT_ARTIFACT_ROOT}
     volumes:
       - mlflow_artifacts:/mlflow-artifacts
     ports:
