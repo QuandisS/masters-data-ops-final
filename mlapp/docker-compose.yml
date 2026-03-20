@@ -8,3 +8,10 @@ services:
       - MLFLOW_TRACKING_URI=http://host.docker.internal:5000
     extra_hosts:
         - "host.docker.internal:host-gateway"
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    external: true
+    name: monitoring
